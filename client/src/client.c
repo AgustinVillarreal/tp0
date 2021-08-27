@@ -1,4 +1,5 @@
 #include "client.h"
+#include <stdio.h>
 
 int main(void)
 {
@@ -15,6 +16,7 @@ int main(void)
 
 	// Usando el logger creado previamente
 	// Escribi: "Hola! Soy un log"
+	log_info(logger, "Hola! Soy un log");
 
 	config = iniciar_config();
 
@@ -46,7 +48,10 @@ int main(void)
 t_log* iniciar_logger(void)
 {
 	t_log* nuevo_logger;
-
+	if((nuevo_logger = log_create("tp0.log", "tp0", true, LOG_LEVEL_INFO)) == NULL){
+		printf("Error al crear log");
+		exit(1);
+	}
 	return nuevo_logger;
 }
 
