@@ -23,8 +23,12 @@ int main(void)
 	// Usando el config creado previamente
 	// Lee las variables de IP, Puerto y Valor
 
-	//Loggear valor de config
+	char* variableIP = config_get_string_value(config, "IP");
+	char* variablePUERTO = config_get_string_value(config, "PUERTO");
+	log_info(logger, variableIP);
+	log_info(logger, variablePUERTO);
 
+	//Loggear valor de config
 	leer_consola(logger);
 
 
@@ -43,6 +47,11 @@ int main(void)
 
 	/*---------------------------------------------------PARTE 5-------------------------------------------------------------*/
 	// Proximamente
+
+	log_destroy(logger);
+	config_destroy(config);
+
+	return EXIT_SUCCESS;
 }
 
 t_log* iniciar_logger(void)
@@ -58,7 +67,7 @@ t_log* iniciar_logger(void)
 t_config* iniciar_config(void)
 {
 	t_config* nuevo_config;
-
+	nuevo_config = config_create("tp0.config");
 	return nuevo_config;
 }
 
