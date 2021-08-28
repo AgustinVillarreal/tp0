@@ -1,5 +1,6 @@
 #include "client.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(void)
 {
@@ -11,6 +12,7 @@ int main(void)
 
 	t_log* logger;
 	t_config* config;
+	t_paquete* paquete;
 
 	logger = iniciar_logger();
 
@@ -23,13 +25,14 @@ int main(void)
 	// Usando el config creado previamente
 	// Lee las variables de IP, Puerto y Valor
 
-	char* variableIP = config_get_string_value(config, "IP");
-	char* variablePUERTO = config_get_string_value(config, "PUERTO");
-	log_info(logger, variableIP);
-	log_info(logger, variablePUERTO);
+	ip = config_get_string_value(config, "IP");
+	puerto = config_get_string_value(config, "PUERTO");
+	valor = config_get_string_value(config, "VALOR");
 
 	//Loggear valor de config
-	leer_consola(logger);
+	log_info(logger, ip);
+	log_info(logger, puerto);
+	log_info(logger, valor);
 
 
 	/*---------------------------------------------------PARTE 3-------------------------------------------------------------*/
@@ -37,11 +40,22 @@ int main(void)
 	// Antes de continuar, tenemos que asegurarnos que el servidor esté corriendo porque lo necesitaremos para lo que sigue.
 
 	// Creamos una conexión hacia el servidor
+
+	log_info(logger, "Aca llegue");
+
 	conexion = crear_conexion(ip, puerto);
+	handshake(conexion);
 
-	//enviar CLAVE al servirdor
+	//enviar CLAVE al servidor
 
-	paquete(conexion);
+	enviar_mensaje(valor, conexion);
+
+	paquete = crear_paquete();
+
+	leer_consola(logger, paquete);
+
+	enviar_paquete(paquete, conexion);
+	eliminar_paquete(paquete);
 
 	terminar_programa(conexion, logger, config);
 
@@ -70,7 +84,7 @@ t_config* iniciar_config(void)
 	return nuevo_config;
 }
 
-void leer_consola(t_log* logger)
+void leer_consola(t_log* logger, t_paquete* paquete)
 {
 	char* leido;
 
@@ -79,26 +93,28 @@ void leer_consola(t_log* logger)
 	while(strcmp(leido, "")){
 	// Acá la idea es que imprimas por el log lo que recibis de la consola.
 		log_info(logger, leido);
+		agregar_a_paquete(paquete, leido, strlen(leido) + 1);
 		free(leido);
 	//El readline retorna NULL cuando la cadena es vacia, por lo que no hay que hacer un free
 		leido = readline(">");
 	}
 
 }
-
-void paquete(int conexion)
+/*
+t_paquete* paquete(int conexion)
 {
 	//Ahora toca lo divertido!
-
 	char* leido;
 	t_paquete* paquete;
+	paquete = crear_paquete();
 
-
-}
+	return paquete;
+}*/
 
 void terminar_programa(int conexion, t_log* logger, t_config* config)
 {
 	//Y por ultimo, para cerrar, hay que liberar lo que utilizamos (conexion, log y config) con las funciones de las commons y del TP mencionadas en el enunciado
 	log_destroy(logger);
 	config_destroy(config);
+	liberar_conexion(conexion);
 }
