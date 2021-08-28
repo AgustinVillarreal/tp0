@@ -48,8 +48,7 @@ int main(void)
 	/*---------------------------------------------------PARTE 5-------------------------------------------------------------*/
 	// Proximamente
 
-	log_destroy(logger);
-	config_destroy(config);
+
 
 	return EXIT_SUCCESS;
 }
@@ -77,9 +76,13 @@ void leer_consola(t_log* logger)
 
 	//El primero te lo dejo de yapa
 	leido = readline(">");
-
+	while(strcmp(leido, "")){
 	// Acá la idea es que imprimas por el log lo que recibis de la consola.
-
+		log_info(logger, leido);
+		free(leido);
+	//El readline retorna NULL cuando la cadena es vacia, por lo que no hay que hacer un free
+		leido = readline(">");
+	}
 
 }
 
@@ -96,4 +99,6 @@ void paquete(int conexion)
 void terminar_programa(int conexion, t_log* logger, t_config* config)
 {
 	//Y por ultimo, para cerrar, hay que liberar lo que utilizamos (conexion, log y config) con las funciones de las commons y del TP mencionadas en el enunciado
+	log_destroy(logger);
+	config_destroy(config);
 }
