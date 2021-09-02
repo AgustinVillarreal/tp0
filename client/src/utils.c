@@ -81,6 +81,7 @@ t_paquete* crear_super_paquete(void)
 {
 	//me falta un malloc!
 	t_paquete* paquete;
+	//paquete = malloc(sizeof(t_paquete));
 
 	//descomentar despues de arreglar
 	//paquete->codigo_operacion = PAQUETE;
