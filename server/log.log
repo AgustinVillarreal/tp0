@@ -93,3 +93,37 @@
 [INFO] 15:02:11:684 Servidor/(10470:10470): probando
 [INFO] 15:02:11:684 Servidor/(10470:10470): ando
 [ERROR] 15:02:11:684 Servidor/(10470:10470): el cliente se desconecto. Terminando servidor
+[INFO] 22:55:06:216 Servidor/(3854:3854): Servidor listo para recibir al cliente
+[INFO] 22:55:12:205 Servidor/(3854:3854): Se conecto un cliente!
+[INFO] 22:55:12:205 Servidor/(3854:3854): Me llego el mensaje 123
+[ERROR] 22:55:25:683 Servidor/(3854:3854): el cliente se desconecto. Terminando servidor
+[INFO] 22:56:04:154 Servidor/(4076:4076): Servidor listo para recibir al cliente
+[INFO] 22:56:11:412 Servidor/(4076:4076): Se conecto un cliente!
+[INFO] 22:56:11:412 Servidor/(4076:4076): Me llego el mensaje 123
+[ERROR] 22:56:18:157 Servidor/(4076:4076): el cliente se desconecto. Terminando servidor
+[INFO] 23:59:18:832 Servidor/(3782:3782): Servidor listo para recibir al cliente
+[INFO] 23:59:25:577 Servidor/(3782:3782): Se conecto un cliente!
+[INFO] 23:59:25:581 Servidor/(3782:3782): Me llego el mensaje 123
+[ERROR] 23:59:35:465 Servidor/(3782:3782): el cliente se desconecto. Terminando servidor
+[INFO] 18:02:56:995 Servidor/(2904:2904): Servidor listo para recibir al cliente
+[INFO] 18:03:16:427 Servidor/(2952:2952): Servidor listo para recibir al cliente
+[INFO] 18:03:24:462 Servidor/(2904:2904): Se conecto un cliente!
+[INFO] 18:03:24:463 Servidor/(2904:2904): Me llego el mensaje 123
+[ERROR] 18:03:39:082 Servidor/(2904:2904): el cliente se desconecto. Terminando servidor
+[INFO] 18:04:25:938 Servidor/(3071:3071): Servidor listo para recibir al cliente
+[INFO] 18:04:33:850 Servidor/(3071:3071): Se conecto un cliente!
+[INFO] 18:04:33:850 Servidor/(3071:3071): Me llego el mensaje 123
+[ERROR] 18:04:42:624 Servidor/(3071:3071): el cliente se desconecto. Terminando servidor
+[INFO] 18:11:30:445 Servidor/(4200:4200): Servidor listo para recibir al cliente
+[INFO] 18:11:57:452 Servidor/(4200:4200): Se conecto un cliente!
+[INFO] 18:12:01:534 Servidor/(4200:4200): Me llego el mensaje 123
+[ERROR] 18:13:30:967 Servidor/(4200:4200): el cliente se desconecto. Terminando servidor
+[INFO] 18:14:14:568 Servidor/(4485:4485): Servidor listo para recibir al cliente
+[INFO] 18:14:21:383 Servidor/(4485:4485): Se conecto un cliente!
+[INFO] 18:14:21:383 Servidor/(4485:4485): Me llego el mensaje 123
+[INFO] 18:14:46:509 Servidor/(4485:4485): Me llegaron los siguientes valores:
+[INFO] 18:14:46:510 Servidor/(4485:4485): culo
+[INFO] 18:14:46:510 Servidor/(4485:4485): aaa
+[INFO] 18:14:46:510 Servidor/(4485:4485): aaa
+[INFO] 18:14:46:510 Servidor/(4485:4485): aaa
+[ERROR] 18:14:46:510 Servidor/(4485:4485): el cliente se desconecto. Terminando servidor

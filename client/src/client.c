@@ -50,7 +50,7 @@ int main(void)
 
 	enviar_mensaje(valor, conexion);
 
-	paquete = crear_super_paquete();
+	paquete = crear_paquete();
 
 	leer_consola(logger, paquete);
 
